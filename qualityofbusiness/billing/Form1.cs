@@ -1,13 +1,16 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
+using System.Data.SqlClient;
+using System.Net.NetworkInformation;
 
 namespace billing
 {
@@ -15,7 +18,7 @@ namespace billing
     {
         private PictureBox pictureBox1;
         private GroupBox groupBox1;
-        private TextBox usertxt;
+        public TextBox usertxt;
         private Label label1;
         private TextBox pwtxt;
         private Button logbtn;
@@ -26,7 +29,7 @@ namespace billing
         {
             InitializeComponent();
         }
-
+        SqlConnection con = new SqlConnection(@"Data Source=LENOVO\SQLEXPRESS;Initial Catalog=invoice;Integrated Security=True;Encrypt=False");
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -69,9 +72,10 @@ namespace billing
             // 
             this.pwtxt.BackColor = System.Drawing.SystemColors.Info;
             this.pwtxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pwtxt.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pwtxt.Location = new System.Drawing.Point(109, 100);
             this.pwtxt.Name = "pwtxt";
-            this.pwtxt.Size = new System.Drawing.Size(197, 22);
+            this.pwtxt.Size = new System.Drawing.Size(197, 27);
             this.pwtxt.TabIndex = 3;
             this.pwtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -79,9 +83,10 @@ namespace billing
             // 
             this.usertxt.BackColor = System.Drawing.SystemColors.Info;
             this.usertxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.usertxt.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usertxt.Location = new System.Drawing.Point(109, 56);
             this.usertxt.Name = "usertxt";
-            this.usertxt.Size = new System.Drawing.Size(197, 22);
+            this.usertxt.Size = new System.Drawing.Size(197, 27);
             this.usertxt.TabIndex = 2;
             this.usertxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -158,7 +163,31 @@ namespace billing
 
         private void logbtn_Click(object sender, EventArgs e)
         {
-         
-        }
+            try
+            {
+                string query = "Select * From userinfo Where username='" + usertxt.Text + "' AND psw='" + pwtxt.Text + "'";
+                SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                DataTable dta = new DataTable();
+                sda.Fill(dta);
+                if (dta.Rows.Count > 0)
+                {
+                    main mn = new main();
+                    mn.Show();
+                    this.Hide();
+                    con.Close();
+                }
+                else
+                {
+                    MessageBox.Show("This Account Is Not Created , Plese Click the Signup Button to Create Account", "Error", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    usertxt.Clear();
+                    pwtxt.Clear();
+                    usertxt.Focus();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("error");
+            }
+        } 
     }
 }

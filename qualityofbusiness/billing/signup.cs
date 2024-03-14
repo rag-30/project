@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
+using System.Data.SqlClient;
 
 namespace billing
 {
@@ -17,10 +17,10 @@ namespace billing
         {
             InitializeComponent();
         }
-
+        SqlConnection con = new SqlConnection(@"Data Source=LENOVO\SQLEXPRESS;Initial Catalog=invoice;Integrated Security=True;Encrypt=False");
         private void regbtn_Click(object sender, EventArgs e)
-        {
-            SqlConnection con = new SqlConnection(@"Data Source=LENOVO\SQLEXPRESS;Initial Catalog=invoice;Integrated Security=True;Encrypt=False");
+        {           
+            Form1 lgn = new Form1();
             if (getpas.Text == conbtn.Text)
             {
                 con.Open();
@@ -28,7 +28,9 @@ namespace billing
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("Sign Up Successfully");
+                MessageBox.Show("Sign Up Successfully","Done",MessageBoxButtons.OK);
+                lgn.Show();
+                
             }
             else
             {
