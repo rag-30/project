@@ -32,6 +32,7 @@ namespace billing
         SqlConnection con = new SqlConnection(@"Data Source=LENOVO\SQLEXPRESS;Initial Catalog=invoice;Integrated Security=True;Encrypt=False");
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pwtxt = new System.Windows.Forms.TextBox();
@@ -46,11 +47,14 @@ namespace billing
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Purple;
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(320, 413);
+            this.pictureBox1.Size = new System.Drawing.Size(341, 370);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -61,7 +65,7 @@ namespace billing
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.Usern);
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(336, 91);
+            this.groupBox1.Location = new System.Drawing.Point(344, 92);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(400, 170);
             this.groupBox1.TabIndex = 1;
@@ -115,7 +119,7 @@ namespace billing
             this.logbtn.BackColor = System.Drawing.Color.Peru;
             this.logbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logbtn.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logbtn.Location = new System.Drawing.Point(401, 307);
+            this.logbtn.Location = new System.Drawing.Point(453, 281);
             this.logbtn.Name = "logbtn";
             this.logbtn.Size = new System.Drawing.Size(91, 39);
             this.logbtn.TabIndex = 2;
@@ -128,7 +132,7 @@ namespace billing
             this.signbtn.BackColor = System.Drawing.Color.Peru;
             this.signbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signbtn.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signbtn.Location = new System.Drawing.Point(550, 308);
+            this.signbtn.Location = new System.Drawing.Point(558, 281);
             this.signbtn.Name = "signbtn";
             this.signbtn.Size = new System.Drawing.Size(92, 38);
             this.signbtn.TabIndex = 3;
@@ -138,7 +142,7 @@ namespace billing
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(748, 413);
+            this.ClientSize = new System.Drawing.Size(748, 370);
             this.Controls.Add(this.signbtn);
             this.Controls.Add(this.logbtn);
             this.Controls.Add(this.groupBox1);
