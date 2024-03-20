@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.sidepanel = new System.Windows.Forms.Panel();
             this.ac = new System.Windows.Forms.Button();
             this.inv = new System.Windows.Forms.Button();
@@ -54,6 +55,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.invshw = new System.Windows.Forms.Label();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.sidepanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datashow)).BeginInit();
             this.panel1.SuspendLayout();
@@ -220,9 +222,16 @@
             // 
             this.datashow.AllowUserToAddRows = false;
             this.datashow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datashow.DefaultCellStyle = dataGridViewCellStyle1;
             this.datashow.Location = new System.Drawing.Point(32, 264);
             this.datashow.Name = "datashow";
-            this.datashow.ReadOnly = true;
             this.datashow.Size = new System.Drawing.Size(592, 241);
             this.datashow.TabIndex = 12;
             // 
@@ -343,6 +352,11 @@
             this.invshw.Size = new System.Drawing.Size(0, 18);
             this.invshw.TabIndex = 22;
             // 
+            // printDialog1
+            // 
+            this.printDialog1.Document = this.printDocument1;
+            this.printDialog1.UseEXDialog = true;
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -388,5 +402,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label invshw;
+        private System.Windows.Forms.PrintDialog printDialog1;
     }
 }

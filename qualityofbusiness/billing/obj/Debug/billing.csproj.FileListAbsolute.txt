@@ -202,15 +202,6 @@ D:\Myproject\project\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel
 D:\Myproject\project\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Protocols.dll
 D:\Myproject\project\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Myproject\project\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Tokens.dll
-D:\Myproject\project\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Barcode.dll
-D:\Myproject\project\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Chart.dll
-D:\Myproject\project\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Diagram.dll
-D:\Myproject\project\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Grid.dll
-D:\Myproject\project\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Host.WinForm.dll
-D:\Myproject\project\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Presentation.dll
-D:\Myproject\project\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Schedule.dll
-D:\Myproject\project\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Text.dll
-D:\Myproject\project\qualityofbusiness\billing\bin\Debug\Nevron.Nov.WinFormControls.dll
 D:\Myproject\project\qualityofbusiness\billing\bin\Debug\System.Buffers.dll
 D:\Myproject\project\qualityofbusiness\billing\bin\Debug\System.Configuration.ConfigurationManager.dll
 D:\Myproject\project\qualityofbusiness\billing\bin\Debug\System.Diagnostics.DiagnosticSource.dll
@@ -293,3 +284,206 @@ D:\Myproject\project\qualityofbusiness\billing\obj\Debug\billing.csproj.CoreComp
 D:\Myproject\project\qualityofbusiness\billing\obj\Debug\billing.csproj.CopyComplete
 D:\Myproject\project\qualityofbusiness\billing\obj\Debug\billing.exe
 D:\Myproject\project\qualityofbusiness\billing\obj\Debug\billing.pdb
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\billing.exe.config
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\billing.exe
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\billing.pdb
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Azure.Core.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Azure.Identity.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Microsoft.Data.SqlClient.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Microsoft.Identity.Client.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Buffers.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.IO.FileSystem.AccessControl.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Memory.Data.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Memory.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Security.AccessControl.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Security.Permissions.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Text.Json.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.ValueTuple.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Nevron.Nov.GraphicsGL.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Host.WinBase.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Azure.Core.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Azure.Identity.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Microsoft.Data.SqlClient.pdb
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Microsoft.Data.SqlClient.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Microsoft.Identity.Client.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Barcode.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Chart.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Diagram.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Grid.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Host.WinForm.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Presentation.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Schedule.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Text.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Nevron.Nov.WinFormControls.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Buffers.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.IO.FileSystem.AccessControl.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Memory.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Memory.Data.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Security.AccessControl.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Security.Permissions.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Text.Json.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\System.ValueTuple.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Nevron.Nov.GraphicsGL.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Host.WinBase.xml
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\obj\Debug\billing.csproj.AssemblyReference.cache
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\obj\Debug\billing.csproj.SuggestedBindingRedirects.cache
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\obj\Debug\billing.exe.config
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\obj\Debug\billing.Form1.resources
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\obj\Debug\billing.main.resources
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\obj\Debug\billing.Properties.Resources.resources
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\obj\Debug\billing.signup.resources
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\obj\Debug\billing.csproj.GenerateResource.cache
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\obj\Debug\billing.csproj.CoreCompileInputs.cache
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\obj\Debug\billing.csproj.Up2Date
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\obj\Debug\billing.exe
+C:\Users\spiher c08\Desktop\ragul\qualityofbusiness\billing\obj\Debug\billing.pdb
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\billing.exe.config
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\billing.exe
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\billing.pdb
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Azure.Core.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Azure.Identity.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Microsoft.Data.SqlClient.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Microsoft.Identity.Client.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Barcode.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Chart.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Diagram.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Grid.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Host.WinForm.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Presentation.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Schedule.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Text.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.WinFormControls.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Buffers.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.IO.FileSystem.AccessControl.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Memory.Data.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Memory.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Security.AccessControl.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Security.Permissions.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Text.Json.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.ValueTuple.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.GraphicsGL.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Host.WinBase.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Azure.Core.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Azure.Identity.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Microsoft.Data.SqlClient.pdb
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Microsoft.Data.SqlClient.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Microsoft.Identity.Client.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Barcode.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Chart.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Diagram.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Grid.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Host.WinForm.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Presentation.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Schedule.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Text.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.WinFormControls.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Buffers.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.IO.FileSystem.AccessControl.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Memory.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Memory.Data.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Security.AccessControl.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Security.Permissions.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Text.Json.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\System.ValueTuple.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.GraphicsGL.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\Nevron.Nov.Host.WinBase.xml
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ragul\Desktop\qualityofbusiness\billing\obj\Debug\billing.csproj.AssemblyReference.cache
+C:\Users\ragul\Desktop\qualityofbusiness\billing\obj\Debug\billing.csproj.SuggestedBindingRedirects.cache
+C:\Users\ragul\Desktop\qualityofbusiness\billing\obj\Debug\billing.exe.config
+C:\Users\ragul\Desktop\qualityofbusiness\billing\obj\Debug\billing.Form1.resources
+C:\Users\ragul\Desktop\qualityofbusiness\billing\obj\Debug\billing.main.resources
+C:\Users\ragul\Desktop\qualityofbusiness\billing\obj\Debug\billing.Properties.Resources.resources
+C:\Users\ragul\Desktop\qualityofbusiness\billing\obj\Debug\billing.signup.resources
+C:\Users\ragul\Desktop\qualityofbusiness\billing\obj\Debug\billing.csproj.GenerateResource.cache
+C:\Users\ragul\Desktop\qualityofbusiness\billing\obj\Debug\billing.csproj.CoreCompileInputs.cache
+C:\Users\ragul\Desktop\qualityofbusiness\billing\obj\Debug\billing.csproj.CopyComplete
+C:\Users\ragul\Desktop\qualityofbusiness\billing\obj\Debug\billing.exe
+C:\Users\ragul\Desktop\qualityofbusiness\billing\obj\Debug\billing.pdb

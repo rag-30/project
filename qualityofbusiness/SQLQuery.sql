@@ -1,16 +1,14 @@
-﻿create table ino(
-    ino tinyint primary key,
-    customername varchar(20) not null,
-    mobileno varchar(10) not null,
+﻿create table sales(
+    ino tinyint not null,
     item varchar(7) not null,
     quantity varchar(2) not null,
     price smallint not null
 );
 
-select*from ino
-truncate table ino
+select*from sales
+truncate table sales
 
-drop table ino
+drop table sales
 
 
 
