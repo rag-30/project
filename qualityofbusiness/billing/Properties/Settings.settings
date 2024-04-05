@@ -10,5 +10,11 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=LENOVO\SQLEXPRESS;Initial Catalog=invoice;Integrated Security=True;Encrypt=False</Value>
     </Setting>
+    <Setting Name="d1" Type="System.Windows.Forms.DateTimePickerFormat" Scope="User">
+      <Value Profile="(Default)">Custom</Value>
+    </Setting>
+    <Setting Name="d2" Type="System.Windows.Forms.DateTimePickerFormat" Scope="User">
+      <Value Profile="(Default)">Short</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

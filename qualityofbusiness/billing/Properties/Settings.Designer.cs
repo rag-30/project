@@ -33,5 +33,29 @@ namespace billing.Properties {
                 return ((string)(this["invoiceConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Custom")]
+        public global::System.Windows.Forms.DateTimePickerFormat d1 {
+            get {
+                return ((global::System.Windows.Forms.DateTimePickerFormat)(this["d1"]));
+            }
+            set {
+                this["d1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Short")]
+        public global::System.Windows.Forms.DateTimePickerFormat d2 {
+            get {
+                return ((global::System.Windows.Forms.DateTimePickerFormat)(this["d2"]));
+            }
+            set {
+                this["d2"] = value;
+            }
+        }
     }
 }
