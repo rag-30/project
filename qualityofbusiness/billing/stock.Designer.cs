@@ -41,7 +41,6 @@
             this.qt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gst = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.si)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -68,8 +67,7 @@
             this.s,
             this.qt,
             this.pr,
-            this.sp,
-            this.gst});
+            this.sp});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.PeachPuff;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -158,12 +156,6 @@
             this.sp.Name = "sp";
             this.sp.Width = 60;
             // 
-            // gst
-            // 
-            this.gst.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.gst.HeaderText = "GST";
-            this.gst.Name = "gst";
-            // 
             // stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,6 +185,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn qt;
         private System.Windows.Forms.DataGridViewTextBoxColumn pr;
         private System.Windows.Forms.DataGridViewTextBoxColumn sp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gst;
     }
 }

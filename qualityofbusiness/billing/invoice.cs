@@ -142,7 +142,6 @@ namespace billing
                 cl.ExecuteNonQuery();
                 con.Close();
             }
-            cb1.SelectedItem = null;
             dt.Clear();
             datashow.DataSource = null;
             clear();
@@ -152,11 +151,11 @@ namespace billing
         private void add_Click(object sender, EventArgs e)
         {
             dt.Clear();
-            gst = Convert.ToInt16(comboBox1.SelectedValue) - Convert.ToSingle(Convert.ToSingle(comboBox1.SelectedValue)/(1+(5/100)));
+            gst = Convert.ToInt16(price) - Convert.ToSingle(Convert.ToSingle(price)/(1+(5/100)));
             double g = Math.Round(gst, 2);
-            pr = Convert.ToInt16(Convert.ToInt16(comboBox1.SelectedValue) * Convert.ToInt16(qbox.Text));
+            pr = Convert.ToInt16(Convert.ToInt16(price) * Convert.ToInt16(qbox.Text));
             con.Open();
-            string s = "insert into tempin values('" + invtxt.Text + "','" + ntxt.Text + "','" + no.Text + "','" + cb1.SelectedValue + "','" + comboBox1.SelectedValue + "','" + qbox.Text + "','" + pr + "','"+g+"')";
+            string s = "insert into tempin values('" + invtxt.Text + "','" + ntxt.Text + "','" + no.Text + "','" +name.Text+ "','"+price+"','" + qbox.Text + "','" + pr + "','"+g+"')";
             SqlCommand cmd = new SqlCommand(s, con);
             if (cmd.ExecuteNonQuery() > 0)
             {
@@ -173,7 +172,6 @@ namespace billing
                 }
             }
             con.Close();
-            cb1.SelectedItem = null;
             qbox.Clear();
             price.Clear();
         }
@@ -190,8 +188,7 @@ namespace billing
         {
             if (e.KeyCode == Keys.Enter)
             {
-                cb1.Focus();
-                cb1.DroppedDown = true;
+                pid.Focus();
             }
         }
 
@@ -234,18 +231,7 @@ namespace billing
             ntxt.Focus();
         }
 
-        private void cb1_Enter(object sender, EventArgs e)
-        {
-            string a = "select distinct item from purstock";
-            con.Open();
-            SqlDataAdapter da = new SqlDataAdapter(a, con);
-            DataSet ds = new DataSet();
-            da.Fill(ds,"item");
-            con.Close();
-            cb1.DataSource= ds.Tables["item"];
-            cb1.DisplayMember = "item";
-            cb1.ValueMember = "item";
-        }
+        
 
         private void Ind()
         {
@@ -266,23 +252,27 @@ namespace billing
                 }
             }
         }
-
-        private void comboBox1_Enter(object sender, EventArgs e)
+        private void textBox3_Leave(object sender, EventArgs e)
         {
-            string a = "select sp from pricelist where pn ='"+cb1.SelectedValue+"'";
+            string a = "select item,pd,sp from stock where pcode='"+pid.Text+"'";
             con.Open();
-            SqlDataAdapter da = new SqlDataAdapter(a, con);
-            DataSet ds = new DataSet();
-            da.Fill(ds,"sp");
+            SqlCommand id = new SqlCommand(a, con);
+            SqlDataReader dr = id.ExecuteReader();
+            if (dr.Read())
+            {
+                name.Text = dr[0].ToString();
+                subname.Text = dr[1].ToString();
+                price.Text = dr[2].ToString();
+            }
             con.Close();
-            comboBox1.DataSource = ds.Tables["sp"];
-            comboBox1.DisplayMember = "sp";
-            comboBox1.ValueMember = "sp";
         }
 
-        private void comboBox2_Enter(object sender, EventArgs e)
+        private void size_Enter(object sender, EventArgs e)
         {
-            
+            if(name.Text=="SHIRT" || name.Text == "T-SHIRT")
+            {
+                size.Items.Add();
+            }
         }
     }
 }

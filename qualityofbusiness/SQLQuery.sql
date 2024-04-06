@@ -59,11 +59,8 @@ drop column code
 drop table tempin
 
 create table pur(
-      ino varchar(7) not null,
+      ino varchar(8) not null,
       seller varchar(20) not null,
-      product varchar(20) not null,
-      quant tinyint not null,
-      rate smallint not null,
       amount int not null,
       gst float(2)  not null,
       dte date not null
@@ -97,8 +94,8 @@ end
 
 create table stock(
        pcode varchar(5) not null,
-       item varchar(20) not null,
-       size tinyint not null,
+       item varchar(10) not null,
+       pd varchar(20) not null,
        quant tinyint not null,
        cp smallint not null,
        sp smallint not null,
@@ -136,21 +133,21 @@ add id varchar(4) not null;
 go
 create PROCEDURE upstock(
    @id varchar(5),
-   @item varchar(20), 
-   @s tinyint,
+   @item varchar(10),
+   @pd varchar(20),
    @quant tinyint,
    @cp smallint,
    @sp smallint
 )
 AS
 begin
-   if exists (select item from stock where item=@item and size=@s and cp=@cp)
+   if exists (select item from stock where pcode=@id)
    begin
-        update stock set quant=quant+@quant where item=@item and size=@s and cp=@cp;
+        update stock set quant=quant+@quant where pcode=@id;
    end
    else
    begin 
-        insert into stock values(@id,@item,@s,@quant,@cp,@sp);
+        insert into stock values(@id,@item,@pd,@quant,@cp,@sp);
    end
 end
 go

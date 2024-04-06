@@ -21,15 +21,21 @@ namespace billing
             c = cn.Text != null;
             it = item.Text != null;
             q = qb.Text != null;
-            r = rate.Text != null;
+            r = cp.Text != null;
             date.CustomFormat = "dd-MMM-yy";
-            
-            
+            p.Columns.Add("P_ID");
+            p.Columns.Add("P_Name");
+            p.Columns.Add("P_Description");
+            p.Columns.Add("Quant",typeof(Byte));
+            p.Columns.Add("P_Price", typeof(short));
+            p.Columns.Add("S_Price", typeof(short));
+            purprod.DataSource = p;
         }
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\invoice.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=False");
         uint tamt;
         float tgst;
         bool it, q, r, i, c ;
+        DataTable p = new DataTable();
 
         private void addbtn_Click(object sender, EventArgs e)
         {
@@ -37,7 +43,8 @@ namespace billing
             
             if ((it & q & r &  i & c) == true)
             {
-                con.Open();
+                p.Rows.Add(pid.Text, item.Text, pd.Text, qb.Text, cp.Text, sp.Text);
+                /*con.Open();
                 try
                 {
                     tamt = Convert.ToUInt32(qb.Text) * Convert.ToUInt32(rate.Text);
@@ -66,17 +73,26 @@ namespace billing
                 {
                     MessageBox.Show(ex.Message);
                 }
-                con.Close();
+                con.Close();*/
             }
             else
             {
                 MessageBox.Show("Data Missing For Further Process", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            pid.Clear();
             item.Clear();
+            pd.Clear();
             qb.Clear();
-            rate.Clear();
-            cbgst.SelectedItem = null;
-            item.Focus();
+            cp.Clear();
+            sp.Clear();
+            pid.Focus();
+        }
+
+        private void pur_Load(object sender, EventArgs e)
+        {
+            purprod.ColumnHeadersDefaultCellStyle.BackColor = Color.BurlyWood;
+            purprod.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            purprod.EnableHeadersVisualStyles = false;
         }
 
         private void load_Click(object sender, EventArgs e)
@@ -86,14 +102,16 @@ namespace billing
                 con.Open();
                 try
                 {
-                    for(sbyte i = 0; i+1 < purprod.Rows.Count; i++)
+                    string q = "insert into pur values ('" + inno.Text + "','" + cn.Text + "','" + amttxt.Text + "','" + gsttxt.Text + "','" + date.Text + "')";
+                    SqlCommand sc = new SqlCommand(q, con);
+                    sc.ExecuteNonQuery();
+                    for (sbyte i = 0; i+1 < purprod.Rows.Count; i++)
                     {
-                        string c = "insert into pur values ('" + inno.Text + "','" + cn.Text + "','" + purprod.Rows[i].Cells[0].Value + "','" + purprod.Rows[i].Cells[1].Value + "','" + purprod.Rows[i].Cells[2].Value+"','" + purprod.Rows[i].Cells[3].Value + "','" + purprod.Rows[i].Cells[4].Value+ "','"+date.Text+"')" +
-                            "exec upstock @item ='" +purprod.Rows[i].Cells[0].Value+"',@quant ='"+purprod.Rows[i].Cells[1].Value+"'";
+                        string c ="exec upstock @id ='" + purprod.Rows[i].Cells[0].Value + "',@item ='" + purprod.Rows[i].Cells[1].Value + "',@pd ='" + purprod.Rows[i].Cells[2].Value + "',@quant ='" + purprod.Rows[i].Cells[3].Value + "',@cp ='" + purprod.Rows[i].Cells[4].Value+"',@sp ='" + purprod.Rows[i].Cells[5].Value+"'";
                         SqlCommand cmd = new SqlCommand(c, con);
                         if (cmd.ExecuteNonQuery() > 0)
                         {
-                            MessageBox.Show("data insert to purstock");
+                            MessageBox.Show(purprod.Rows[i].Cells[0].Value + "inserted");
                         }
                     }
                     temps();
@@ -118,13 +136,10 @@ namespace billing
             inno.Clear();
             cn.Clear();
             date.Value = DateTime.Today;
-            item.Clear();
-            qb.Clear();
-            rate.Clear();
-            cbgst.SelectedItem = null;
+            amttxt.Clear();
+            gsttxt.Clear();
+            p.Clear();
             purprod.DataSource = null;
-            amount.Text = null;
-            totgst.Text = null;
         }
         private void temps()   //temps table clear function 
         {
@@ -136,12 +151,6 @@ namespace billing
 
         private void clear_Click(object sender, EventArgs e)
         {
-            if(purprod.Rows.Count > 0)
-            {
-                con.Open();
-                temps();
-                con.Close();
-            }
             clr();
         }
 
