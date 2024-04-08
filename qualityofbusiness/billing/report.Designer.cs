@@ -104,12 +104,12 @@
             this.salstock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.salstock.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.salstock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.salstock.Location = new System.Drawing.Point(363, 160);
+            this.salstock.Location = new System.Drawing.Point(361, 162);
             this.salstock.Name = "salstock";
             this.salstock.ReadOnly = true;
             this.salstock.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.salstock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.salstock.Size = new System.Drawing.Size(177, 211);
+            this.salstock.Size = new System.Drawing.Size(263, 211);
             this.salstock.TabIndex = 21;
             // 
             // ssd
@@ -157,7 +157,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(407, 118);
+            this.label4.Location = new System.Drawing.Point(442, 118);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 20);
             this.label4.TabIndex = 26;
@@ -212,7 +212,7 @@
             this.label6.TabIndex = 31;
             this.label6.Text = "Sales Stock";
             // 
-            // stock
+            // report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -233,7 +233,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.curstock);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "stock";
+            this.Name = "report";
             this.Text = "stock";
             ((System.ComponentModel.ISupportInitialize)(this.curstock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salstock)).EndInit();

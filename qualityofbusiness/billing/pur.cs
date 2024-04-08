@@ -43,7 +43,7 @@ namespace billing
             
             if ((it & q & r &  i & c) == true)
             {
-                p.Rows.Add(pid.Text, item.Text, pd.Text, qb.Text, cp.Text, sp.Text);
+                p.Rows.Add(pid.Text, item.Text.ToUpper(), pd.Text.ToUpper(), qb.Text, cp.Text, sp.Text);
                 /*con.Open();
                 try
                 {
@@ -102,16 +102,17 @@ namespace billing
                 con.Open();
                 try
                 {
-                    string q = "insert into pur values ('" + inno.Text + "','" + cn.Text + "','" + amttxt.Text + "','" + gsttxt.Text + "','" + date.Text + "')";
+                    string q = "insert into amt values('"+inno.Text+"','"+cn.Text+"','"+amttxt.Text+"','"+gsttxt.Text+"','"+date.Text+"')";
                     SqlCommand sc = new SqlCommand(q, con);
                     sc.ExecuteNonQuery();
                     for (sbyte i = 0; i+1 < purprod.Rows.Count; i++)
                     {
-                        string c ="exec upstock @id ='" + purprod.Rows[i].Cells[0].Value + "',@item ='" + purprod.Rows[i].Cells[1].Value + "',@pd ='" + purprod.Rows[i].Cells[2].Value + "',@quant ='" + purprod.Rows[i].Cells[3].Value + "',@cp ='" + purprod.Rows[i].Cells[4].Value+"',@sp ='" + purprod.Rows[i].Cells[5].Value+"'";
+                        string c = "insert into pur values('" + inno.Text + "', '" + cn.Text + "','" + purprod.Rows[i].Cells[0].Value + "','" + purprod.Rows[i].Cells[1].Value + "','" + purprod.Rows[i].Cells[2].Value + "','" + purprod.Rows[i].Cells[3].Value + "','" + purprod.Rows[i].Cells[4].Value + "','" + purprod.Rows[i].Cells[5].Value + "','" + date.Text + "')" +
+                            "exec upstock @id ='" + purprod.Rows[i].Cells[0].Value + "',@item ='" + purprod.Rows[i].Cells[1].Value + "',@pd ='" + purprod.Rows[i].Cells[2].Value + "',@quant ='" + purprod.Rows[i].Cells[3].Value + "'";
                         SqlCommand cmd = new SqlCommand(c, con);
                         if (cmd.ExecuteNonQuery() > 0)
                         {
-                            MessageBox.Show(purprod.Rows[i].Cells[0].Value + "inserted");
+                            MessageBox.Show(purprod.Rows[i].Cells[0].Value +" inserted");
                         }
                     }
                     temps();

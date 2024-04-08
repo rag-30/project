@@ -49,7 +49,7 @@ namespace billing
             switch (datashow.Rows.Count)
             {
                 case 1:
-                    e.Graphics.DrawString(print(0, 3), new Font("arial", 19, FontStyle.Bold), Brushes.Black, new Point(70, 250));
+                    e.Graphics.DrawString(print(0, 2), new Font("arial", 19, FontStyle.Bold), Brushes.Black, new Point(70, 250));
                     e.Graphics.DrawString(print(0, 4), new Font("arial", 19, FontStyle.Bold), Brushes.Black, new Point(350, 250));
                     e.Graphics.DrawString(print(0, 5), new Font("arial", 19, FontStyle.Bold), Brushes.Black, new Point(560, 250));
                     e.Graphics.DrawString(print(0, 6), new Font("arial", 19, FontStyle.Bold), Brushes.Black, new Point(710, 250));
@@ -60,12 +60,12 @@ namespace billing
                     e.Graphics.DrawString(amt.Text, new Font("calibri", 18, FontStyle.Regular), Brushes.Black, new Point(720, 400));
                     break;
                 case 2:
-                    e.Graphics.DrawString(print(0, 3), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(70, 250));
+                    e.Graphics.DrawString(print(0, 2), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(70, 250));
                     e.Graphics.DrawString(print(0, 4), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 250));
                     e.Graphics.DrawString(print(0, 5), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(560, 250));
                     e.Graphics.DrawString(print(0, 6), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(710, 250));
 
-                    e.Graphics.DrawString(print(1, 3), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(70, 300));
+                    e.Graphics.DrawString(print(1, 2), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(70, 300));
                     e.Graphics.DrawString(print(1, 4), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 300));
                     e.Graphics.DrawString(print(1, 5), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(560, 300));
                     e.Graphics.DrawString(print(1, 6), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(710, 300));
@@ -77,17 +77,17 @@ namespace billing
                     e.Graphics.DrawString(amt.Text, new Font("calibri", 18, FontStyle.Regular), Brushes.Black, new Point(720, 450));
                     break;
                 case 3:
-                    e.Graphics.DrawString(print(0, 3), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(70, 250));
+                    e.Graphics.DrawString(print(0, 2), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(70, 250));
                     e.Graphics.DrawString(print(0, 4), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 250));
                     e.Graphics.DrawString(print(0, 5), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(560, 250));
                     e.Graphics.DrawString(print(0, 6), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(710, 250));
 
-                    e.Graphics.DrawString(print(1, 3), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(70, 300));
+                    e.Graphics.DrawString(print(1, 2), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(70, 300));
                     e.Graphics.DrawString(print(1, 4), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 300));
                     e.Graphics.DrawString(print(1, 5), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(560, 300));
                     e.Graphics.DrawString(print(1, 6), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(710, 300));
 
-                    e.Graphics.DrawString(print(2, 3), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(70, 350));
+                    e.Graphics.DrawString(print(2, 2), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(70, 350));
                     e.Graphics.DrawString(print(2, 4), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 350));
                     e.Graphics.DrawString(print(2, 5), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(560, 350));
                     e.Graphics.DrawString(print(2, 6), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(710, 350));
@@ -108,13 +108,12 @@ namespace billing
             {
                 string a;
                 printPreviewDialog1.Document = printDocument1;
-                a = "insert into sales(ino,cusn,quantity,price,gst) SELECT avg(ino),'"+ntxt.Text.ToUpper()+"',sum(quantity) ,sum(price),sum(gst) from tempin ";
+                a = "insert into sales SELECT '"+invtxt.Text+"','"+ntxt.Text.ToUpper()+"','"+no.Text+"',sum(price),sum(gst) from tempin ";
                 SqlCommand sa = new SqlCommand(a,con);
                 sa.ExecuteNonQuery();
                 for(sbyte i=0; i < datashow.Rows.Count; i++)
                 {
-                    string b = "exec item @n ='" + datashow.Rows[i].Cells[3].Value + "',@i ='" + invtxt.Text + "'" +
-                               "exec minst @item ='"+datashow.Rows[i].Cells[3].Value+"', @quant ='" + datashow.Rows[i].Cells[5].Value+"',@rate ='" + datashow.Rows[i].Cells[4].Value+"',@date ='"+DateTime.Now.ToString("yyyy-MM-dd")+"'";
+                    string b ="exec minst @id ='"+datashow.Rows[i].Cells[0].Value+"',@n ='" + datashow.Rows[i].Cells[1].Value+"',@pd ='" + datashow.Rows[i].Cells[2].Value+"',@s ='" + datashow.Rows[i].Cells[3].Value+"', @quant ='" + datashow.Rows[i].Cells[5].Value+"',@rate ='" + datashow.Rows[i].Cells[4].Value+"',@date ='"+DateTime.Now.ToString("yyyy-MM-dd")+"'";
                     SqlCommand up = new SqlCommand(b, con);
                     up.ExecuteNonQuery();
                 }
@@ -151,11 +150,11 @@ namespace billing
         private void add_Click(object sender, EventArgs e)
         {
             dt.Clear();
-            gst = Convert.ToInt16(price) - Convert.ToSingle(Convert.ToSingle(price)/(1+(5/100)));
+            pr = Convert.ToInt16(Convert.ToInt16(price.Text) * Convert.ToInt16(qbox.Text));
+            gst = Convert.ToSingle(pr) - (Convert.ToSingle(pr) / (1 + (Convert.ToSingle(5) / 100)));
             double g = Math.Round(gst, 2);
-            pr = Convert.ToInt16(Convert.ToInt16(price) * Convert.ToInt16(qbox.Text));
             con.Open();
-            string s = "insert into tempin values('" + invtxt.Text + "','" + ntxt.Text + "','" + no.Text + "','" +name.Text+ "','"+price+"','" + qbox.Text + "','" + pr + "','"+g+"')";
+            string s = "insert into tempin values('" + pid.Text + "','" + name.Text + "','" + subname.Text + "','"+size.Text+"','" +price.Text+ "','" + qbox.Text + "','" + pr + "','"+g+"')";
             SqlCommand cmd = new SqlCommand(s, con);
             if (cmd.ExecuteNonQuery() > 0)
             {
@@ -174,6 +173,11 @@ namespace billing
             con.Close();
             qbox.Clear();
             price.Clear();
+            name.Clear();
+            subname.Clear();
+            pid.Clear();
+            size.SelectedText = null;
+            pid.Focus();
         }
 
         private void ntxt_KeyDown(object sender, KeyEventArgs e)
@@ -192,28 +196,11 @@ namespace billing
             }
         }
 
-        private void cb1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.Handled = true;
-                qbox.Focus();
-            }
-        }
-
-        private void price_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Enter)
-            {
-                add.PerformClick();
-            }
-        }
-
         private void qbox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                price.Focus();
+                add.PerformClick();
             }
         }
 
@@ -240,7 +227,7 @@ namespace billing
             SqlDataReader inn = i.ExecuteReader();
             if (inn.Read())
             {
-                if (inn[0] == null)
+                if (inn[0] == DBNull.Value)
                 {
                     invtxt.Text = "1";
                 }
@@ -254,7 +241,7 @@ namespace billing
         }
         private void textBox3_Leave(object sender, EventArgs e)
         {
-            string a = "select item,pd,sp from stock where pcode='"+pid.Text+"'";
+            string a = "select prod,pd,sp from pur where pid='"+pid.Text+"'";
             con.Open();
             SqlCommand id = new SqlCommand(a, con);
             SqlDataReader dr = id.ExecuteReader();
@@ -271,8 +258,44 @@ namespace billing
         {
             if(name.Text=="SHIRT" || name.Text == "T-SHIRT")
             {
-                size.Items.Add();
+                size.Items.Add("38");
+                size.Items.Add("40");
+                size.Items.Add("42");
+                size.Items.Add("44");
+                size.Items.Add("46");
             }
+            else
+            {
+                size.Items.Add("30");
+                size.Items.Add("32");
+                size.Items.Add("34");
+                size.Items.Add("36");
+                size.Items.Add("38");
+                size.Items.Add("40");
+                size.Items.Add("42");
+                size.Items.Add("44");
+            }
+        }
+
+        private void pid_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                size.Focus();
+            }
+        }
+
+        private void size_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                qbox.Focus();
+            }
+        }
+
+        private void size_Leave(object sender, EventArgs e)
+        {
+            size.Items.Clear();
         }
     }
 }

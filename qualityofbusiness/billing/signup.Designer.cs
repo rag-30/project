@@ -30,10 +30,10 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.conbtn = new System.Windows.Forms.TextBox();
+            this.conpas = new System.Windows.Forms.TextBox();
             this.getpas = new System.Windows.Forms.TextBox();
-            this.eml = new System.Windows.Forms.TextBox();
             this.usertxt = new System.Windows.Forms.TextBox();
+            this.shoptxt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,10 +55,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.conbtn);
+            this.groupBox1.Controls.Add(this.conpas);
             this.groupBox1.Controls.Add(this.getpas);
-            this.groupBox1.Controls.Add(this.eml);
             this.groupBox1.Controls.Add(this.usertxt);
+            this.groupBox1.Controls.Add(this.shoptxt);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -71,45 +71,49 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "SignupForm";
             // 
-            // conbtn
+            // conpas
             // 
-            this.conbtn.BackColor = System.Drawing.SystemColors.Info;
-            this.conbtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.conbtn.Location = new System.Drawing.Point(165, 188);
-            this.conbtn.Name = "conbtn";
-            this.conbtn.Size = new System.Drawing.Size(221, 22);
-            this.conbtn.TabIndex = 7;
-            this.conbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.conpas.BackColor = System.Drawing.SystemColors.Info;
+            this.conpas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.conpas.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.conpas.Location = new System.Drawing.Point(165, 188);
+            this.conpas.Name = "conpas";
+            this.conpas.Size = new System.Drawing.Size(221, 24);
+            this.conpas.TabIndex = 7;
+            this.conpas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // getpas
             // 
             this.getpas.BackColor = System.Drawing.SystemColors.Info;
             this.getpas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.getpas.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.getpas.Location = new System.Drawing.Point(163, 145);
             this.getpas.Name = "getpas";
-            this.getpas.Size = new System.Drawing.Size(223, 22);
+            this.getpas.Size = new System.Drawing.Size(223, 24);
             this.getpas.TabIndex = 6;
             this.getpas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // eml
-            // 
-            this.eml.BackColor = System.Drawing.SystemColors.Info;
-            this.eml.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.eml.Location = new System.Drawing.Point(163, 98);
-            this.eml.Name = "eml";
-            this.eml.Size = new System.Drawing.Size(223, 22);
-            this.eml.TabIndex = 5;
-            this.eml.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // usertxt
             // 
             this.usertxt.BackColor = System.Drawing.SystemColors.Info;
             this.usertxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.usertxt.Location = new System.Drawing.Point(163, 49);
+            this.usertxt.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usertxt.Location = new System.Drawing.Point(163, 98);
             this.usertxt.Name = "usertxt";
-            this.usertxt.Size = new System.Drawing.Size(223, 22);
-            this.usertxt.TabIndex = 4;
+            this.usertxt.Size = new System.Drawing.Size(223, 24);
+            this.usertxt.TabIndex = 5;
             this.usertxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // shoptxt
+            // 
+            this.shoptxt.BackColor = System.Drawing.SystemColors.Info;
+            this.shoptxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.shoptxt.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shoptxt.Location = new System.Drawing.Point(163, 44);
+            this.shoptxt.Name = "shoptxt";
+            this.shoptxt.Size = new System.Drawing.Size(223, 24);
+            this.shoptxt.TabIndex = 4;
+            this.shoptxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -145,11 +149,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(76, 43);
+            this.label1.Location = new System.Drawing.Point(53, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 23);
+            this.label1.Size = new System.Drawing.Size(106, 23);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Name      :";
+            this.label1.Text = "Shop Name  :";
             // 
             // regbtn
             // 
@@ -177,6 +181,7 @@
             this.Name = "signup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "signup";
+            this.Deactivate += new System.EventHandler(this.signup_Deactivate);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -192,10 +197,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox conbtn;
+        private System.Windows.Forms.TextBox conpas;
         private System.Windows.Forms.TextBox getpas;
-        private System.Windows.Forms.TextBox eml;
         private System.Windows.Forms.TextBox usertxt;
+        private System.Windows.Forms.TextBox shoptxt;
         private System.Windows.Forms.Button regbtn;
     }
 }

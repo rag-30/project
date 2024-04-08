@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(invoice));
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -134,14 +134,14 @@
             this.datashow.AllowUserToAddRows = false;
             this.datashow.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datashow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datashow.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datashow.DefaultCellStyle = dataGridViewCellStyle4;
             this.datashow.Location = new System.Drawing.Point(78, 292);
             this.datashow.Name = "datashow";
             this.datashow.RowHeadersWidth = 20;
@@ -157,7 +157,6 @@
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(84, 17);
             this.price.TabIndex = 32;
-            this.price.KeyDown += new System.Windows.Forms.KeyEventHandler(this.price_KeyDown);
             // 
             // panel5
             // 
@@ -304,6 +303,7 @@
             this.pid.Name = "pid";
             this.pid.Size = new System.Drawing.Size(79, 21);
             this.pid.TabIndex = 56;
+            this.pid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pid_KeyDown);
             this.pid.Leave += new System.EventHandler(this.textBox3_Leave);
             // 
             // label9
@@ -352,6 +352,8 @@
             this.size.Size = new System.Drawing.Size(79, 21);
             this.size.TabIndex = 61;
             this.size.Enter += new System.EventHandler(this.size_Enter);
+            this.size.KeyDown += new System.Windows.Forms.KeyEventHandler(this.size_KeyDown);
+            this.size.Leave += new System.EventHandler(this.size_Leave);
             // 
             // invoice
             // 

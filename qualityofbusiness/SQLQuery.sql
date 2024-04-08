@@ -1,9 +1,8 @@
 ﻿create table sales(
     ino tinyint not null,
     cusn varchar(25) not null,
-    item varchar(40)  null,
-    quantity tinyint not null,
-    price smallint not null,
+    phone varchar(10) not null,
+    amount smallint not null,
     gst float(2) not null
 );
 
@@ -22,6 +21,14 @@ drop table sales
 alter table sales
 add gst float(2) not null
 
+create table userinfo(
+    sn varchar(20) not null,
+    un varchar(15) not null,
+    pw varchar(8) not null,
+);
+select * from userinfo
+truncate table userinfo
+
 go
 create procedure item(
       @n varchar(20),
@@ -29,24 +36,27 @@ create procedure item(
 )
 as
 begin
-    if exists (select item from sales where @i is not null)
-          update sales set item=item+','+@n  where ino=@i;
+    if exists (select item from sales where item is null)
+    begin
+          update sales set item=@n where ino=@i;
+      end
      else
-          update sales set item=@n where ino=@i ;
+     begin
+           update sales set item=item+','+@n  where ino=@i;
+      end
 end
 
 drop proc item;
 
 create table tempin(
-     ino tinyint not null,
-     cusn varchar(25)  null,
-     phn varchar(10)  null,
+     pid varchar(5) not null,
      item varchar(20) not null,
+     pd varchar(20) not null,
+     size tinyint not null,
      rate smallint  null,
      quantity tinyint not null,
      price smallint not null,
-     gst float(2) not null,
-     code varchar(4) not null
+     gst float(2) not null
 );
 truncate table tempin
 select * from tempin;
@@ -58,11 +68,24 @@ drop column code
 
 drop table tempin
 
+create table amt(
+     ino varchar(8) not null,
+     seller varchar(20) not null,
+     amount int not null,
+     gst float(2) not null,
+     dte date not null
+);
+select * from amt
+
 create table pur(
       ino varchar(8) not null,
       seller varchar(20) not null,
-      amount int not null,
-      gst float(2)  not null,
+      pid varchar(5) not null,
+      prod varchar(10) not null,
+      pd varchar(20) not null,
+      quant tinyint not null,
+      cp smallint not null,
+      sp smallint not null,
       dte date not null
 );
 
@@ -91,14 +114,14 @@ begin
           update pur set product=@n,quant=@q where ino=@i ;
 end
 
+drop proc purdetail
+
 
 create table stock(
        pcode varchar(5) not null,
        item varchar(10) not null,
        pd varchar(20) not null,
        quant tinyint not null,
-       cp smallint not null,
-       sp smallint not null,
 );
 truncate table purstock 
 insert into purstock values('SHIRT',20,'@P',400,28-03-2024),('SHIRT',10,'@R'),('PANT',10,'@P')
@@ -113,7 +136,10 @@ alter table purstock
 add dat date not null
 
 create table salstock(
-   item varchar(20) not null,
+   pcode varchar(5) not null,
+   item varchar(10) not null,
+   pd varchar(20) not null,
+   size tinyint not null,
    quant tinyint not null,
    rate smallint not null,
    indate date not null
@@ -123,21 +149,20 @@ drop table salstock
 
 select * from salstock
 truncate table salstock
-insert into salstock values('shirt',2,getdate()),('pant',2,'10-feb-2024');
-select item,quant from salstock where indate between GETDATE() and getdate();
+insert into salstock values('P1','PANT','COTTON PANT',36,2,650,'2024-04-04')
+select pd,size,sum(quant) from salstock where indate between getdate()-7 and getdate() group by pd,size 
 
 alter table salstock
 add id varchar(4) not null;
 
+delete salstock where size=46
 
 go
 create PROCEDURE upstock(
    @id varchar(5),
    @item varchar(10),
    @pd varchar(20),
-   @quant tinyint,
-   @cp smallint,
-   @sp smallint
+   @quant tinyint
 )
 AS
 begin
@@ -147,7 +172,7 @@ begin
    end
    else
    begin 
-        insert into stock values(@id,@item,@pd,@quant,@cp,@sp);
+        insert into stock values(@id,@item,@pd,@quant);
    end
 end
 go
@@ -156,22 +181,25 @@ drop proc upstock
 
 go
 create procedure minst(
-    @item varchar(20),
+    @id varchar(5),
+    @n varchar(10),
+    @pd varchar(20),
+    @s tinyint,
     @quant tinyint,
     @rate smallint,
     @date date)
 as
 begin
-if exists(select item from purstock where item=@item)
+if exists(select item from stock where pcode=@id)
      begin
-         update purstock set quant=quant-@quant where item=@item;
-       if exists (select item from salstock where item=@item and indate=@date)
+         update stock set quant=quant-@quant where pcode=@id;
+       if exists (select pcode from salstock where pcode=@id and size=@s and indate=@date)
             begin
-                  update salstock set quant=quant+@quant where item=@item and indate=@date ;
+                  update salstock set quant=quant+@quant where pcode=@id and size=@s and indate=@date ;
             end
        else
             begin
-                  insert into salstock values(@item,@quant,@rate,@date);
+                  insert into salstock values(@id,@n,@pd,@s,@quant,@rate,@date);
             end
       end
 end

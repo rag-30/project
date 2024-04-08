@@ -18,13 +18,13 @@ namespace billing
         {
             InitializeComponent();
             con.Open();
-            string o = "select * from purstock";
+            string o = "select pd as Product,quant as Quantity from stock";
             SqlDataAdapter open = new SqlDataAdapter(o, con);
             open.Fill(dt);
-            string s = "select item,quant from salstock where indate between getdate()-30 and getdate()";
+            string s = "select pd,size,sum(quant) from salstock where indate between getdate()-7 and getdate() group by pd,size";
             SqlDataAdapter show = new SqlDataAdapter(s, con);
             show.Fill(ss);
-            string l = "select item,quant from purstock where quant<=20";
+            string l = "select item,quant from stock where quant<=20";
             SqlDataAdapter low = new SqlDataAdapter(l,con);
             low.Fill(ll);
             curstock.DataSource = dt;

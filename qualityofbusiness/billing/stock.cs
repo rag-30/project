@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace billing
 {
@@ -16,30 +17,49 @@ namespace billing
         public stock()
         {
             InitializeComponent();
-        }
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\invoice.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=False");
-
-        private void stock_Load(object sender, EventArgs e)
-        {
-            si.ColumnHeadersDefaultCellStyle.BackColor= Color.BurlyWood;
+            con.Open();
+            table();
+            con.Close();
+            si.ColumnHeadersDefaultCellStyle.BackColor = Color.BurlyWood;
             si.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
             si.EnableHeadersVisualStyles = false;
+        }
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\invoice.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=False");
+        DataTable pur = new DataTable();
+        private void stock_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void si_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = e.RowIndex;
+            invno.Text = si.Rows[row].Cells[0].Value.ToString();
+            pid.Text = si.Rows[row].Cells[2].Value.ToString();
+            sp.Text = si.Rows[row].Cells[7].Value.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(si.Rows.Count >  0)
+            if(MessageBox.Show("Do You Want To Update The "+pid.Text+" Product To "+sp.Text+" Price","Price Update",MessageBoxButtons.YesNo,MessageBoxIcon.Question)== DialogResult.Yes)
             {
+                string q = "update pur set sp='" + sp.Text + "' where pid='" + pid.Text + "'";
                 con.Open();
-                for(sbyte i =0;i+1<si.Rows.Count;i++)
-                {
-                    string q = "exec upstock @id ='" + si.Rows[i].Cells[0].Value + "',@item ='" + si.Rows[i].Cells[1].Value + "',@s ='" + si.Rows[i].Cells[2].Value + "',@quant ='" + si.Rows[i].Cells[3].Value + "',@cp ='" + si.Rows[i].Cells[4].Value + "',@sp ='" + si.Rows[i].Cells[5].Value + "'";
-                    SqlCommand sc = new SqlCommand(q, con);
-                    sc.ExecuteNonQuery();
-                }
+                SqlCommand sc = new SqlCommand(q, con);
+                sc.ExecuteNonQuery();
+                pur.Clear();
+                table();
                 con.Close();
-                MessageBox.Show("stock  updated");
             }
         }
+
+        private void table()
+        {
+            string a = "select * from pur";
+            SqlDataAdapter da = new SqlDataAdapter(a, con);
+            da.Fill(pur);
+            si.DataSource = pur;
+        }
+
     }
 }
