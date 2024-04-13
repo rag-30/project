@@ -17,12 +17,12 @@ namespace billing
         public pur()
         {
             InitializeComponent();
+            inno.Focus();
             i = inno.Text != null;
             c = cn.Text != null;
             it = item.Text != null;
             q = qb.Text != null;
             r = cp.Text != null;
-            date.CustomFormat = "dd-MMM-yy";
             p.Columns.Add("P_ID");
             p.Columns.Add("P_Name");
             p.Columns.Add("P_Description");
@@ -32,48 +32,14 @@ namespace billing
             purprod.DataSource = p;
         }
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\invoice.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=False");
-        uint tamt;
-        float tgst;
         bool it, q, r, i, c ;
         DataTable p = new DataTable();
 
         private void addbtn_Click(object sender, EventArgs e)
         {
-            
-            
             if ((it & q & r &  i & c) == true)
             {
                 p.Rows.Add(pid.Text, item.Text.ToUpper(), pd.Text.ToUpper(), qb.Text, cp.Text, sp.Text);
-                /*con.Open();
-                try
-                {
-                    tamt = Convert.ToUInt32(qb.Text) * Convert.ToUInt32(rate.Text);
-                    tgst = (tamt) * Convert.ToSingle(cbgst.SelectedItem) / 100;
-                    string a = "insert into temps values ('" + item.Text + "','" + qb.Text + "','" + rate.Text + "','" + tamt + "','" + tgst + "')";
-                    SqlCommand b = new SqlCommand(a, con);
-                    if (b.ExecuteNonQuery() > 0)
-                    {
-                        string c = "select * from temps";
-                        SqlDataAdapter d = new SqlDataAdapter(c, con);
-                        DataTable dt = new DataTable();
-                        d.Fill(dt);
-                        purprod.DataSource = dt;
-                        string y = "select SUM(amount) as amount, SUM(gst) as gst from temps";
-                        SqlCommand cmd = new SqlCommand(y, con);
-                        SqlDataReader r = cmd.ExecuteReader();
-                        if (r.Read())
-                        {
-                            amount.Text = r["amount"].ToString();
-                            totgst.Text = r["gst"].ToString();
-                        }
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                con.Close();*/
             }
             else
             {
@@ -86,6 +52,74 @@ namespace billing
             cp.Clear();
             sp.Clear();
             pid.Focus();
+        }
+
+        private void pid_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                item.Focus();
+            }
+        }
+
+        private void item_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                pd.Focus();
+            }
+            else if (e.KeyCode == Keys.Back)
+            {
+                pid.Focus();
+            }
+        }
+
+        private void pd_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                qb.Focus();
+            }
+            else if (e.KeyCode == Keys.Back)
+            {
+                item.Focus();
+            }
+        }
+
+        private void qb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                cp.Focus();
+            }
+            else if (e.KeyCode == Keys.Back)
+            {
+                pd.Focus();
+            }
+        }
+
+        private void cp_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                sp.Focus();
+            }
+            else if (e.KeyCode == Keys.Back)
+            {
+                qb.Focus();
+            }
+        }
+
+        private void sp_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                addbtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Back)
+            {
+                cp.Focus();
+            }
         }
 
         private void pur_Load(object sender, EventArgs e)
@@ -102,12 +136,12 @@ namespace billing
                 con.Open();
                 try
                 {
-                    string q = "insert into amt values('"+inno.Text+"','"+cn.Text+"','"+amttxt.Text+"','"+gsttxt.Text+"','"+date.Text+"')";
+                    string q = "insert into amt values('"+inno.Text+"','"+cn.Text+"','"+amttxt.Text+"','"+gsttxt.Text+"','"+date.Text+"','"+date.Value.ToString("MMMM")+"')";
                     SqlCommand sc = new SqlCommand(q, con);
                     sc.ExecuteNonQuery();
                     for (sbyte i = 0; i+1 < purprod.Rows.Count; i++)
                     {
-                        string c = "insert into pur values('" + inno.Text + "', '" + cn.Text + "','" + purprod.Rows[i].Cells[0].Value + "','" + purprod.Rows[i].Cells[1].Value + "','" + purprod.Rows[i].Cells[2].Value + "','" + purprod.Rows[i].Cells[3].Value + "','" + purprod.Rows[i].Cells[4].Value + "','" + purprod.Rows[i].Cells[5].Value + "','" + date.Text + "')" +
+                        string c = "insert into pur values('" + inno.Text + "', '" + cn.Text + "','" + purprod.Rows[i].Cells[0].Value + "','" + purprod.Rows[i].Cells[1].Value + "','" + purprod.Rows[i].Cells[2].Value + "','" + purprod.Rows[i].Cells[3].Value + "','" + purprod.Rows[i].Cells[4].Value + "','" + purprod.Rows[i].Cells[5].Value + "','" + date.Text + "',Datename(month,'"+date.Value.ToString("yyyy-MM-dd")+"'))" +
                             "exec upstock @id ='" + purprod.Rows[i].Cells[0].Value + "',@item ='" + purprod.Rows[i].Cells[1].Value + "',@pd ='" + purprod.Rows[i].Cells[2].Value + "',@quant ='" + purprod.Rows[i].Cells[3].Value + "'";
                         SqlCommand cmd = new SqlCommand(c, con);
                         if (cmd.ExecuteNonQuery() > 0)
@@ -115,7 +149,6 @@ namespace billing
                             MessageBox.Show(purprod.Rows[i].Cells[0].Value +" inserted");
                         }
                     }
-                    temps();
                     MessageBox.Show(inno.Text + "  Is Stored");
 
                 }
@@ -141,13 +174,6 @@ namespace billing
             gsttxt.Clear();
             p.Clear();
             purprod.DataSource = null;
-        }
-        private void temps()   //temps table clear function 
-        {
-            string a = "truncate table temps";
-            SqlCommand cmd = new SqlCommand(a, con);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("data cleared successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Hand);
         }
 
         private void clear_Click(object sender, EventArgs e)

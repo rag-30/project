@@ -25,20 +25,20 @@ namespace billing
             if (getpas.Text == conpas.Text)
             {
                 con.Open();
-                string sql = "INSERT INTO userinfo Values('" + shoptxt.Text + "','" + usertxt.Text + "','" + getpas.Text + "')";
+                string sql = "INSERT INTO userinfo Values('" + shoptxt.Text.ToUpper() + "','" + usertxt.Text + "','" + getpas.Text + "')";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Sign Up Successfully","Done",MessageBoxButtons.OK);
                 lgn.Show();
+                this.Hide();
             }
             else
             {
                 MessageBox.Show("Incorrect Password , Please type The Password Correctly");
             }
         }
-
-        private void signup_Deactivate(object sender, EventArgs e)
+        private void signup_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }

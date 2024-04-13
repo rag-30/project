@@ -19,12 +19,16 @@ namespace billing
             con.Open();
             Ind();
             con.Close();
+            datashow.ColumnHeadersDefaultCellStyle.BackColor = Color.BurlyWood;
+            datashow.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            datashow.EnableHeadersVisualStyles = false;
         }
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\invoice.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=False");
         DataTable dt = new DataTable();
         short pr;
         float gst;
-
+        main m = new main();
+        
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             gst = 0;
@@ -34,7 +38,7 @@ namespace billing
                 a = Convert.ToSingle(datashow.Rows[i].Cells[7].Value);
                 gst += a;
             }
-            e.Graphics.DrawString("FABRICS", new Font("arial", 30, FontStyle.Bold), Brushes.Black, new Point(300, 20));
+            e.Graphics.DrawString(m.shopname.Text.ToString(),new Font("arial", 30, FontStyle.Bold), Brushes.Black, new Point(300, 20));
             e.Graphics.DrawString("Invoice No : " + invtxt.Text, new Font("calibri", 18), Brushes.Black, new Point(100, 80));
             e.Graphics.DrawString("Customer Name : " + ntxt.Text, new Font("calibri", 18), Brushes.Black, new Point(450, 80));
             e.Graphics.DrawString("Phone No : " + no.Text, new Font("calibri", 18), Brushes.Black, new Point(450, 120));
@@ -58,6 +62,8 @@ namespace billing
                     e.Graphics.DrawString(gst.ToString(), new Font("calibri", 18, FontStyle.Regular), Brushes.Black, new Point(720, 350));
                     e.Graphics.DrawString("Amount : ", new Font("calibri", 18, FontStyle.Bold), Brushes.Black, new Point(600, 400));
                     e.Graphics.DrawString(amt.Text, new Font("calibri", 18, FontStyle.Regular), Brushes.Black, new Point(720, 400));
+
+                    e.Graphics.DrawString("Thank You For Purchasing",new Font("Microsoft Sans Serif",20,FontStyle.Underline),Brushes.BurlyWood,new Point(300,500));
                     break;
                 case 2:
                     e.Graphics.DrawString(print(0, 2), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(70, 250));
@@ -75,6 +81,8 @@ namespace billing
                     e.Graphics.DrawString(gst.ToString(), new Font("calibri", 18, FontStyle.Regular), Brushes.Black, new Point(720, 400));
                     e.Graphics.DrawString("Amount : ", new Font("calibri", 18, FontStyle.Bold), Brushes.Black, new Point(600, 450));
                     e.Graphics.DrawString(amt.Text, new Font("calibri", 18, FontStyle.Regular), Brushes.Black, new Point(720, 450));
+
+                    e.Graphics.DrawString("Thank You For Purchasing", new Font("Microsoft Sans Serif", 20, FontStyle.Underline), Brushes.BurlyWood, new Point(300, 550));
                     break;
                 case 3:
                     e.Graphics.DrawString(print(0, 2), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(70, 250));
@@ -97,6 +105,71 @@ namespace billing
                     e.Graphics.DrawString(gst.ToString(), new Font("calibri", 18, FontStyle.Regular), Brushes.Black, new Point(720, 500));
                     e.Graphics.DrawString("Amount : ", new Font("calibri", 18, FontStyle.Bold), Brushes.Black, new Point(600, 550));
                     e.Graphics.DrawString(amt.Text, new Font("calibri", 18, FontStyle.Regular), Brushes.Black, new Point(720, 550));
+
+                    e.Graphics.DrawString("Thank You For Purchasing", new Font("Microsoft Sans Serif", 20, FontStyle.Underline), Brushes.BurlyWood, new Point(300, 650));
+                    break;
+                case 4:
+                    e.Graphics.DrawString(print(0, 2), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(70, 250));
+                    e.Graphics.DrawString(print(0, 4), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 250));
+                    e.Graphics.DrawString(print(0, 5), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(560, 250));
+                    e.Graphics.DrawString(print(0, 6), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(710, 250));
+
+                    e.Graphics.DrawString(print(1, 2), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(70, 300));
+                    e.Graphics.DrawString(print(1, 4), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 300));
+                    e.Graphics.DrawString(print(1, 5), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(560, 300));
+                    e.Graphics.DrawString(print(1, 6), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(710, 300));
+
+                    e.Graphics.DrawString(print(2, 2), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(70, 350));
+                    e.Graphics.DrawString(print(2, 4), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 350));
+                    e.Graphics.DrawString(print(2, 5), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(560, 350));
+                    e.Graphics.DrawString(print(2, 6), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(710, 350));
+
+                    e.Graphics.DrawString(print(3, 2), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(70, 400));
+                    e.Graphics.DrawString(print(3, 4), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 400));
+                    e.Graphics.DrawString(print(3, 5), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(560, 400));
+                    e.Graphics.DrawString(print(3, 6), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(710, 400));
+
+                    e.Graphics.DrawLine(new Pen(Color.Brown, 5), new Point(0, 450), new Point(900, 450));
+                    e.Graphics.DrawString("Gst : ", new Font("calibri", 18, FontStyle.Bold), Brushes.Black, new Point(600, 500));
+                    e.Graphics.DrawString(gst.ToString(), new Font("calibri", 18, FontStyle.Regular), Brushes.Black, new Point(720, 500));
+                    e.Graphics.DrawString("Amount : ", new Font("calibri", 18, FontStyle.Bold), Brushes.Black, new Point(600, 550));
+                    e.Graphics.DrawString(amt.Text, new Font("calibri", 18, FontStyle.Regular), Brushes.Black, new Point(720, 550));
+
+                    e.Graphics.DrawString("Thank You For Purchasing", new Font("Microsoft Sans Serif", 20, FontStyle.Underline), Brushes.BurlyWood, new Point(300, 650));
+                    break;
+                case 5:
+                    e.Graphics.DrawString(print(0, 2), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(70, 250));
+                    e.Graphics.DrawString(print(0, 4), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 250));
+                    e.Graphics.DrawString(print(0, 5), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(560, 250));
+                    e.Graphics.DrawString(print(0, 6), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(710, 250));
+
+                    e.Graphics.DrawString(print(1, 2), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(70, 300));
+                    e.Graphics.DrawString(print(1, 4), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 300));
+                    e.Graphics.DrawString(print(1, 5), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(560, 300));
+                    e.Graphics.DrawString(print(1, 6), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(710, 300));
+
+                    e.Graphics.DrawString(print(2, 2), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(70, 350));
+                    e.Graphics.DrawString(print(2, 4), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 350));
+                    e.Graphics.DrawString(print(2, 5), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(560, 350));
+                    e.Graphics.DrawString(print(2, 6), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(710, 350));
+
+                    e.Graphics.DrawString(print(3, 2), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(70, 400));
+                    e.Graphics.DrawString(print(3, 4), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 400));
+                    e.Graphics.DrawString(print(3, 5), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(560, 400));
+                    e.Graphics.DrawString(print(3, 6), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(710, 400));
+
+                    e.Graphics.DrawString(print(4, 2), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(70, 450));
+                    e.Graphics.DrawString(print(4, 4), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 450));
+                    e.Graphics.DrawString(print(4, 5), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(560, 450));
+                    e.Graphics.DrawString(print(4, 6), new Font("arial", 19, FontStyle.Regular), Brushes.Black, new Point(710, 450));
+
+                    e.Graphics.DrawLine(new Pen(Color.Brown, 5), new Point(0, 500), new Point(900, 500));
+                    e.Graphics.DrawString("Gst : ", new Font("calibri", 18, FontStyle.Bold), Brushes.Black, new Point(600, 550));
+                    e.Graphics.DrawString(gst.ToString(), new Font("calibri", 18, FontStyle.Regular), Brushes.Black, new Point(720, 550));
+                    e.Graphics.DrawString("Amount : ", new Font("calibri", 18, FontStyle.Bold), Brushes.Black, new Point(600, 600));
+                    e.Graphics.DrawString(amt.Text, new Font("calibri", 18, FontStyle.Regular), Brushes.Black, new Point(720, 600));
+
+                    e.Graphics.DrawString("Thank You For Purchasing", new Font("Microsoft Sans Serif", 20, FontStyle.Underline), Brushes.BurlyWood, new Point(300,700));
                     break;
             }
         }
@@ -108,7 +181,7 @@ namespace billing
             {
                 string a;
                 printPreviewDialog1.Document = printDocument1;
-                a = "insert into sales SELECT '"+invtxt.Text+"','"+ntxt.Text.ToUpper()+"','"+no.Text+"',sum(price),sum(gst) from tempin ";
+                a = "insert into sales SELECT '"+invtxt.Text+"','"+ntxt.Text.ToUpper()+"','"+no.Text+"',sum(price),sum(gst),'"+DateTime.Today.ToString("yyyy-MM-dd")+"','"+DateTime.Now.ToString("MMMM")+"' from tempin ";
                 SqlCommand sa = new SqlCommand(a,con);
                 sa.ExecuteNonQuery();
                 for(sbyte i=0; i < datashow.Rows.Count; i++)
@@ -217,9 +290,6 @@ namespace billing
             price.Clear();
             ntxt.Focus();
         }
-
-        
-
         private void Ind()
         {
             string a = "select max(ino) from sales";

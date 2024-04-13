@@ -29,7 +29,7 @@ namespace billing
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection(@"Data Source=LENOVO\SQLEXPRESS;Initial Catalog=invoice;Integrated Security=True;Encrypt=False");
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\invoice.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=False");
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
@@ -76,29 +76,31 @@ namespace billing
             // 
             this.pwtxt.BackColor = System.Drawing.SystemColors.Info;
             this.pwtxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pwtxt.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pwtxt.Location = new System.Drawing.Point(109, 100);
+            this.pwtxt.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pwtxt.Location = new System.Drawing.Point(109, 105);
             this.pwtxt.Name = "pwtxt";
             this.pwtxt.Size = new System.Drawing.Size(197, 27);
             this.pwtxt.TabIndex = 3;
             this.pwtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pwtxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pwtxt_KeyDown);
             // 
             // usertxt
             // 
             this.usertxt.BackColor = System.Drawing.SystemColors.Info;
             this.usertxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.usertxt.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usertxt.Location = new System.Drawing.Point(109, 56);
+            this.usertxt.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usertxt.Location = new System.Drawing.Point(109, 54);
             this.usertxt.Name = "usertxt";
             this.usertxt.Size = new System.Drawing.Size(197, 27);
             this.usertxt.TabIndex = 2;
             this.usertxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.usertxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.usertxt_KeyDown);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 97);
+            this.label1.Location = new System.Drawing.Point(8, 105);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 23);
             this.label1.TabIndex = 1;
@@ -151,6 +153,7 @@ namespace billing
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.TransparencyKey = System.Drawing.Color.White;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -169,16 +172,15 @@ namespace billing
         {
             try
             {
-                string query = "Select * From userinfo Where username='" + usertxt.Text + "' AND psw='" + pwtxt.Text + "'";
-                SqlDataAdapter sda = new SqlDataAdapter(query, con);
-                DataTable dta = new DataTable();
-                sda.Fill(dta);
-                if (dta.Rows.Count > 0)
+                con.Open();
+                string query = "select * from userinfo Where un='" +usertxt.Text+ "' and pw='"+pwtxt.Text+"' ";
+                SqlCommand z = new SqlCommand(query,con);
+                SqlDataReader r = z.ExecuteReader();
+                if (r.Read())
                 {
                     main mn = new main();
                     mn.Show();
                     this.Hide();
-                    con.Close();
                 }
                 else
                 {
@@ -192,6 +194,28 @@ namespace billing
             {
                 MessageBox.Show("error");
             }
-        } 
+            con.Close();
+        }
+
+        private void usertxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                pwtxt.Focus();
+            }
+        }
+
+        private void pwtxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                logbtn.PerformClick();
+            }
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

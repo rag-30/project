@@ -3,17 +3,20 @@
     cusn varchar(25) not null,
     phone varchar(10) not null,
     amount smallint not null,
-    gst float(2) not null
+    gst float(2) not null,
+    dte date not null,
+    moth varchar(10) not null
 );
 
 select*from sales
-select max(ino) from sales
+select ((select sum(gst) from sales where moth='April')-(select sum(gst) from amt where moth='April')),sum(amount) from sales where moth='April'
 truncate table sales
 
-select round(sum(price)-sum(gst),2) as profit  from sales 
+select round(sum(gst),2)  from sales
+select sum(amount) from sales where dte between GETDATE()-7 and GETDATE();
 
 
-insert into sales SELECT avg(ino) as invoice,concat(item),sum(quantity) as quantity ,sum(price) as price from tempin  group by item;
+insert into sales values(1,'raman','123',3000,150,'2024-04-09','April'),(2,'lakshman','1234',2500,125,'2024-04-02','April')
 drop table sales
 
 
@@ -28,6 +31,7 @@ create table userinfo(
 );
 select * from userinfo
 truncate table userinfo
+insert into userinfo values('fabrics','ragul','ragul30')
 
 go
 create procedure item(
@@ -73,9 +77,14 @@ create table amt(
      seller varchar(20) not null,
      amount int not null,
      gst float(2) not null,
-     dte date not null
+     dte date not null,
+     moth varchar(10) not null
 );
 select * from amt
+truncate table amt
+alter table amt
+add moth varchar(10) null
+update amt set moth='April' where amount>1000;
 
 create table pur(
       ino varchar(8) not null,
@@ -86,9 +95,12 @@ create table pur(
       quant tinyint not null,
       cp smallint not null,
       sp smallint not null,
-      dte date not null
+      dte date not null,
+      moth varchar(10) not null
 );
 
+insert into pur values ('sdja','dwakjak','d1','ajbdjb','zxcdsad',10,200,220,'2024-04-10',DATENAME(MONTH,'2024-04-10'));
+exec upstock @id='S2',@item='SHIRT',@pd='sdf',@quant=10
 truncate table pur
 drop table pur
 select * from pur
@@ -123,7 +135,7 @@ create table stock(
        pd varchar(20) not null,
        quant tinyint not null,
 );
-truncate table purstock 
+truncate table stock 
 insert into purstock values('SHIRT',20,'@P',400,28-03-2024),('SHIRT',10,'@R'),('PANT',10,'@P')
 
 select distinct item from purstock
@@ -167,13 +179,9 @@ create PROCEDURE upstock(
 AS
 begin
    if exists (select item from stock where pcode=@id)
-   begin
         update stock set quant=quant+@quant where pcode=@id;
-   end
    else
-   begin 
         insert into stock values(@id,@item,@pd,@quant);
-   end
 end
 go
 
@@ -208,33 +216,4 @@ end
  exec minst @item='shirt',@quant=2,@date='30-Aug-2003';
 
 
-select item,sum(quant) from purstock group by item
 
-create table temps(
-      item varchar(20) not null,
-      quant tinyint not null,
-      rate smallint not null,
-      amount int not null,
-      gst float(2) not null,
-);
-insert into temps values('shirt',2,400,4000,200),('pant',3,300,2000,50)
-
-select SUM(amount) as amount, SUM(gst) as gst from temps
-
-select * from temps
-truncate table temps
-
-drop table temps
-
-alter table temps
-add code varchar(4) not null;
---custom page
-create table pricelist(
-     pn varchar(20) not null,
-     cp smallint not null,
-     sp smallint not null
-)
-
-drop table pricelist
-truncate table pricelist
-select * from pricelist

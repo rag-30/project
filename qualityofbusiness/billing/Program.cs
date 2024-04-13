@@ -16,7 +16,7 @@ namespace billing
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new report());
+            Application.Run(new Form1());
         }
     }
 }

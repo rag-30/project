@@ -19,9 +19,17 @@ namespace billing
         public main()
         {
             InitializeComponent();
-            
+            string sn = "select sn from userinfo";
+            con.Open();
+            SqlCommand sqlcom = new SqlCommand(sn,con);
+            SqlDataReader reader = sqlcom.ExecuteReader();
+            if (reader.Read())
+            {
+                shopname.Text = reader[0].ToString();
+            }
+            con.Close();
         }
-
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\invoice.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=False");
         private void inv_Click(object sender, EventArgs e)
         {
             chn(new invoice());
@@ -40,7 +48,24 @@ namespace billing
         {
             chn(new pur());
         }
-        
 
+        private void stockbtn_Click(object sender, EventArgs e)
+        {
+            chn(new stock());
+        }
+
+        private void reportbtn_Click(object sender, EventArgs e)
+        {
+            chn(new report());
+        }
+        private void main_Deactivate(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(invoice));
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -65,21 +65,26 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cascadia Code", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(756, 439);
+            this.label5.BackColor = System.Drawing.Color.BurlyWood;
+            this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(676, 342);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 20);
+            this.label5.Size = new System.Drawing.Size(95, 20);
             this.label5.TabIndex = 40;
             this.label5.Text = "Invoice No :";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(860, 228);
+            this.button1.BackColor = System.Drawing.Color.BurlyWood;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(804, 451);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 32);
             this.button1.TabIndex = 39;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "Print";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // qbox
@@ -95,7 +100,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Cascadia Code", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(74, 179);
+            this.label6.Location = new System.Drawing.Point(74, 178);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(99, 20);
             this.label6.TabIndex = 37;
@@ -132,20 +137,21 @@
             // datashow
             // 
             this.datashow.AllowUserToAddRows = false;
+            this.datashow.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.datashow.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datashow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datashow.DefaultCellStyle = dataGridViewCellStyle4;
-            this.datashow.Location = new System.Drawing.Point(78, 292);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datashow.DefaultCellStyle = dataGridViewCellStyle1;
+            this.datashow.Location = new System.Drawing.Point(12, 292);
             this.datashow.Name = "datashow";
             this.datashow.RowHeadersWidth = 20;
-            this.datashow.Size = new System.Drawing.Size(592, 241);
+            this.datashow.Size = new System.Drawing.Size(658, 241);
             this.datashow.TabIndex = 33;
             // 
             // price
@@ -251,32 +257,39 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(757, 343);
+            this.label8.BackColor = System.Drawing.Color.BurlyWood;
+            this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(900, 342);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 18);
+            this.label8.Size = new System.Drawing.Size(76, 20);
             this.label8.TabIndex = 42;
             this.label8.Text = "Amount :";
             // 
             // amt
             // 
             this.amt.AutoSize = true;
-            this.amt.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amt.Location = new System.Drawing.Point(830, 338);
+            this.amt.BackColor = System.Drawing.SystemColors.Info;
+            this.amt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.amt.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amt.ForeColor = System.Drawing.Color.Maroon;
+            this.amt.Location = new System.Drawing.Point(982, 340);
             this.amt.Name = "amt";
-            this.amt.Size = new System.Drawing.Size(54, 26);
+            this.amt.Size = new System.Drawing.Size(32, 26);
             this.amt.TabIndex = 45;
-            this.amt.Text = "       ";
+            this.amt.Text = "    ";
             // 
             // invtxt
             // 
             this.invtxt.AutoSize = true;
-            this.invtxt.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.invtxt.Location = new System.Drawing.Point(879, 439);
+            this.invtxt.BackColor = System.Drawing.SystemColors.Info;
+            this.invtxt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.invtxt.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invtxt.ForeColor = System.Drawing.Color.Maroon;
+            this.invtxt.Location = new System.Drawing.Point(777, 340);
             this.invtxt.Name = "invtxt";
-            this.invtxt.Size = new System.Drawing.Size(54, 26);
+            this.invtxt.Size = new System.Drawing.Size(27, 26);
             this.invtxt.TabIndex = 46;
-            this.invtxt.Text = "       ";
+            this.invtxt.Text = "   ";
             // 
             // label7
             // 
@@ -359,7 +372,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 545);
+            this.ClientSize = new System.Drawing.Size(1074, 561);
             this.Controls.Add(this.size);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.subname);

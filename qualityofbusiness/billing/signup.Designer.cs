@@ -39,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.regbtn = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +56,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.conpas);
             this.groupBox1.Controls.Add(this.getpas);
             this.groupBox1.Controls.Add(this.usertxt);
@@ -66,7 +68,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(326, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(462, 233);
+            this.groupBox1.Size = new System.Drawing.Size(462, 257);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "SignupForm";
@@ -75,10 +77,10 @@
             // 
             this.conpas.BackColor = System.Drawing.SystemColors.Info;
             this.conpas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.conpas.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.conpas.Location = new System.Drawing.Point(165, 188);
+            this.conpas.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.conpas.Location = new System.Drawing.Point(165, 208);
             this.conpas.Name = "conpas";
-            this.conpas.Size = new System.Drawing.Size(221, 24);
+            this.conpas.Size = new System.Drawing.Size(221, 26);
             this.conpas.TabIndex = 7;
             this.conpas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -86,10 +88,10 @@
             // 
             this.getpas.BackColor = System.Drawing.SystemColors.Info;
             this.getpas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.getpas.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.getpas.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.getpas.Location = new System.Drawing.Point(163, 145);
             this.getpas.Name = "getpas";
-            this.getpas.Size = new System.Drawing.Size(223, 24);
+            this.getpas.Size = new System.Drawing.Size(223, 26);
             this.getpas.TabIndex = 6;
             this.getpas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -97,10 +99,10 @@
             // 
             this.usertxt.BackColor = System.Drawing.SystemColors.Info;
             this.usertxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.usertxt.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usertxt.Location = new System.Drawing.Point(163, 98);
+            this.usertxt.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usertxt.Location = new System.Drawing.Point(163, 93);
             this.usertxt.Name = "usertxt";
-            this.usertxt.Size = new System.Drawing.Size(223, 24);
+            this.usertxt.Size = new System.Drawing.Size(223, 26);
             this.usertxt.TabIndex = 5;
             this.usertxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -108,10 +110,10 @@
             // 
             this.shoptxt.BackColor = System.Drawing.SystemColors.Info;
             this.shoptxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.shoptxt.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shoptxt.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.shoptxt.Location = new System.Drawing.Point(163, 44);
             this.shoptxt.Name = "shoptxt";
-            this.shoptxt.Size = new System.Drawing.Size(223, 24);
+            this.shoptxt.Size = new System.Drawing.Size(223, 26);
             this.shoptxt.TabIndex = 4;
             this.shoptxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -119,7 +121,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 188);
+            this.label4.Location = new System.Drawing.Point(6, 208);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(153, 23);
             this.label4.TabIndex = 3;
@@ -139,11 +141,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(76, 92);
+            this.label2.Location = new System.Drawing.Point(58, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 23);
+            this.label2.Size = new System.Drawing.Size(101, 23);
             this.label2.TabIndex = 1;
-            this.label2.Text = "E-mail     :";
+            this.label2.Text = "Username   :";
             // 
             // label1
             // 
@@ -160,13 +162,24 @@
             this.regbtn.BackColor = System.Drawing.Color.Peru;
             this.regbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.regbtn.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.regbtn.Location = new System.Drawing.Point(516, 263);
+            this.regbtn.Location = new System.Drawing.Point(516, 298);
             this.regbtn.Name = "regbtn";
             this.regbtn.Size = new System.Drawing.Size(105, 39);
             this.regbtn.TabIndex = 3;
             this.regbtn.Text = "Register";
             this.regbtn.UseVisualStyleBackColor = false;
             this.regbtn.Click += new System.EventHandler(this.regbtn_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Firebrick;
+            this.label5.Location = new System.Drawing.Point(233, 174);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(153, 16);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "*(maximum 8 characters)";
             // 
             // signup
             // 
@@ -181,7 +194,7 @@
             this.Name = "signup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "signup";
-            this.Deactivate += new System.EventHandler(this.signup_Deactivate);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.signup_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -202,5 +215,6 @@
         private System.Windows.Forms.TextBox usertxt;
         private System.Windows.Forms.TextBox shoptxt;
         private System.Windows.Forms.Button regbtn;
+        private System.Windows.Forms.Label label5;
     }
 }
